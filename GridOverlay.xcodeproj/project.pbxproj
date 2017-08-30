@@ -13,6 +13,7 @@
 		D83656651F56F03900BDDE9A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D83656631F56F03900BDDE9A /* Main.storyboard */; };
 		D83656671F56F03900BDDE9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D83656661F56F03900BDDE9A /* Assets.xcassets */; };
 		D836566A1F56F03900BDDE9A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D83656681F56F03900BDDE9A /* LaunchScreen.storyboard */; };
+		D83656721F56F2D600BDDE9A /* GridPlane.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83656711F56F2D600BDDE9A /* GridPlane.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,8 @@
 		D83656661F56F03900BDDE9A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D83656691F56F03900BDDE9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D836566B1F56F03900BDDE9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D83656711F56F2D600BDDE9A /* GridPlane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridPlane.swift; sourceTree = "<group>"; };
+		D83656731F56F46200BDDE9A /* overlay_grid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = overlay_grid.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,9 +59,11 @@
 		D836565C1F56F03900BDDE9A /* GridOverlay */ = {
 			isa = PBXGroup;
 			children = (
+				D83656731F56F46200BDDE9A /* overlay_grid.png */,
 				D836565D1F56F03900BDDE9A /* AppDelegate.swift */,
 				D836565F1F56F03900BDDE9A /* art.scnassets */,
 				D83656611F56F03900BDDE9A /* ViewController.swift */,
+				D83656711F56F2D600BDDE9A /* GridPlane.swift */,
 				D83656631F56F03900BDDE9A /* Main.storyboard */,
 				D83656661F56F03900BDDE9A /* Assets.xcassets */,
 				D83656681F56F03900BDDE9A /* LaunchScreen.storyboard */,
@@ -139,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D83656721F56F2D600BDDE9A /* GridPlane.swift in Sources */,
 				D83656621F56F03900BDDE9A /* ViewController.swift in Sources */,
 				D836565E1F56F03900BDDE9A /* AppDelegate.swift in Sources */,
 			);

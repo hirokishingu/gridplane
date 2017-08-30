@@ -13,9 +13,15 @@ import ARKit
 class ViewController: UIViewController, ARSCNViewDelegate {
 
     @IBOutlet var sceneView: ARSCNView!
+    var planes = [GridPlane]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.sceneView = ARSCNView(frame:self.view.frame)
+        self.sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints, ARSCNDebugOptions.showWorldOrigin]
+        self.view.addSubview(self.sceneView)
+        
         
         // Set the view's delegate
         sceneView.delegate = self
@@ -23,8 +29,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Show statistics such as fps and timing information
         sceneView.showsStatistics = true
         
-        // Create a new scene
-        let scene = SCNScene(named: "art.scnassets/ship.scn")!
+        let scene = SCNScene()
+        
         
         // Set the scene to the view
         sceneView.scene = scene
@@ -35,6 +41,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         // Create a session configuration
         let configuration = ARWorldTrackingConfiguration()
+        
+        configuration.planeDetection = .horizontal
 
         // Run the view's session
         sceneView.session.run(configuration)
@@ -53,6 +61,15 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     }
 
     // MARK: - ARSCNViewDelegate
+    
+    func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
+        if !(anchor is ARPlaneAnchor) {
+            return
+        }
+        let plane = GridPlane(anchor: anchor as! ARPlaneAnchor)
+        self.planes.append(plane)
+        node.addChildNode(plane)
+    }
     
 /*
     // Override to create and configure nodes for anchors added to the view's session.
